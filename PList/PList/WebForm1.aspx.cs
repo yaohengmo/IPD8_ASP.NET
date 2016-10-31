@@ -20,7 +20,14 @@ namespace PList
         {
             name = tbName.Text;
             age = int.Parse(tbAge.Text);
-            BulletedList1.Items.Add(name + "  is  " + age + "years old.");
+            if (name.Length < 2 || age < 0 || age > 150)
+            {
+                BulletedList1.Items.Add("Data entered is not good!");
+            }
+            else
+            {
+                BulletedList1.Items.Add(name + "  is  " + age + "years old.");
+            }
         }
     }
 }
